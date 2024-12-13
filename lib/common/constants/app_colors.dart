@@ -14,4 +14,5 @@ abstract class AppColors {
   static Color greenLight = const Color(0xff08c552);
   static Color yellow = const Color(0xfff5eebf);
   static Color deepYellow = const Color(0xffb68e2c);
+  static Color blueWithOpicty = const Color(0xffe3f2fd);
 }

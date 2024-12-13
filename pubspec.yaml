@@ -23,6 +23,7 @@ dependencies:
   flutter_secure_storage: 
   another_flushbar: 
   animate_do: 
+  flutter_rating_stars: 
   syncfusion_flutter_calendar: 
    path: ../calendar/
 

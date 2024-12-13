@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/main_widgets/feed_back_widget.dart';
 import '../widgets/main_widgets/packs_club__widget.dart';
 import '../widgets/container_body_widget.dart';
 import '../widgets/dashbord_app_bar_widget.dart';
@@ -41,6 +42,9 @@ class DashboardScreen extends StatelessWidget {
                 ),
                 SliverToBoxAdapter(
                   child: RewardsWidget(),
+                ),
+                SliverToBoxAdapter(
+                  child: FeedBackWidget(),
                 ),
               ],
             ),
