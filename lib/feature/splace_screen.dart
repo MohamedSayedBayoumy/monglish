@@ -3,9 +3,9 @@ import 'package:get/get.dart';
 
 import '../common/constants/app_colors.dart';
 import '../common/constants/app_images.dart';
-import '../common/utils/utils.dart';
 import 'package:animate_do/animate_do.dart';
 
+import '../common/widgets/custom_assets_image.dart';
 import 'login/screens/login_screen.dart';
 
 class SplaceScreen extends StatelessWidget {
@@ -23,8 +23,8 @@ class SplaceScreen extends StatelessWidget {
           onFinish: (v) {
             Get.offAndToNamed(LoginScreen.routeName);
           },
-          child: AppUtils.handleUseAssetImage(
-            AppImages.imagesLogo,
+          child: const CustomAssetsImage(
+            imagePath: AppImages.imagesLogo,
           ),
         ),
       ),

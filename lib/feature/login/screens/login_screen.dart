@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import '../../../common/constants/app_colors.dart';
 import '../../../common/constants/app_images.dart';
 import '../../../common/utils/enums.dart';
-import '../../../common/utils/utils.dart';
+import '../../../common/widgets/custom_assets_image.dart';
 import '../../../common/widgets/custom_button.dart';
 import '../../../common/widgets/custom_padding.dart';
 import '../controller/login_controller.dart';
@@ -26,9 +26,7 @@ class LoginScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              AppUtils.handleUseAssetImage(
-                AppImages.imagesLogo,
-              ),
+              const CustomAssetsImage(imagePath: AppImages.imagesLogo),
               const SizedBox(
                 height: 20.0,
               ),

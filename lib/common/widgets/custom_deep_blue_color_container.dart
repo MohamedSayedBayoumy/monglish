@@ -2,9 +2,11 @@ import 'package:flutter/widgets.dart';
 
 class CustomDeepBlueColorContainer extends StatelessWidget {
   final Widget? child;
+  final EdgeInsetsDirectional? padding;
   const CustomDeepBlueColorContainer({
     super.key,
     this.child,
+    this.padding,
   });
 
   @override
@@ -12,6 +14,7 @@ class CustomDeepBlueColorContainer extends StatelessWidget {
     return Container(
       height: MediaQuery.sizeOf(context).height,
       width: MediaQuery.sizeOf(context).width,
+      padding: padding,
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topCenter,

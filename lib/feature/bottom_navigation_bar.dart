@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../common/constants/app_colors.dart';
 import '../common/constants/app_fonts.dart';
 import 'dashbord/screens/dashbord_screen.dart';
+import 'drawer/drawer_screen.dart';
 
 class BottomNavigationBarScreen extends StatefulWidget {
   static const String routeName = "/bottom_navigation";
@@ -29,7 +30,7 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
           setState(() {});
         },
         children: const [
-          DashbordScreen(),
+          DrawerScreen(),
           DashbordScreen(),
         ],
       ),
@@ -38,6 +39,7 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
         elevation: 20.0,
         currentIndex: currentIndex,
         onTap: (value) {
+          // if(value)
           pageController.animateToPage(value,
               duration: const Duration(milliseconds: 100),
               curve: Curves.linear);

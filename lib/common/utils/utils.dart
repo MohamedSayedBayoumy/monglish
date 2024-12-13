@@ -1,9 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-
 import 'enums.dart';
 
 abstract class AppUtils {
+  static double avatarRadius = 38;
   static checkInput(String value, FiledType filedType) {
     switch (filedType) {
       case FiledType.email:
@@ -27,22 +25,6 @@ abstract class AppUtils {
         if (value.isEmpty) {
           return "This File is Required";
         }
-    }
-  }
-
-  static Widget handleUseAssetImage(
-    image, {
-    double? width = 20,
-    double? height = 20,
-  }) {
-    if (image.toString().endsWith("svg")) {
-      return SvgPicture.asset(image);
-    } else {
-      return Image.asset(
-        image,
-        width: width,
-        height: height,
-      );
     }
   }
 }

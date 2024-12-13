@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import 'common/routes/routes.dart';
 import 'feature/bottom_navigation_bar.dart';
-import 'feature/dashbord/screens/dashbord_screen.dart';
 
 void main() {
   runApp(const MyApp());
+
   // runApp(
   //   DevicePreview(
   //     builder: (context) => const MyApp(),
   //   ),
   // );
+
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent,
+    statusBarIconBrightness: Brightness.light,
+  ));
 }
 
 class MyApp extends StatelessWidget {
