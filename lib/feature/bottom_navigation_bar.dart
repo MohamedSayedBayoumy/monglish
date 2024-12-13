@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../common/constants/app_colors.dart';
 import '../common/constants/app_fonts.dart';
-import 'dashbord/screens/dashbord_screen.dart';
+import 'dashboard/screens/dashboard_screen.dart';
 import 'drawer/drawer_screen.dart';
 
 class BottomNavigationBarScreen extends StatefulWidget {
@@ -33,7 +33,7 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
           setState(() {});
         },
         children: const [
-          DashbordScreen(),
+          DashboardScreen(),
         ],
       ),
       drawer: const DrawerScreen(),

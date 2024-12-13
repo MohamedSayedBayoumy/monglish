@@ -1,10 +1,10 @@
 import 'package:get/get.dart';
 
 import '../../feature/bottom_navigation_bar.dart';
-import '../../feature/dashbord/screens/dashbord_screen.dart';
+import '../../feature/dashboard/screens/dashboard_screen.dart';
 import '../../feature/login/screens/login_screen.dart';
 import '../../feature/splace_screen.dart';
-import '../binding/dashbord_binding.dart';
+import '../binding/dashboard_binding.dart';
 import '../binding/login_binding.dart';
 
 List<GetPage> routes = [
@@ -22,12 +22,12 @@ List<GetPage> routes = [
     name: "/bottom_navigation",
     page: () => const BottomNavigationBarScreen(),
     bindings: [
-      DashbordBinding(),
+      DashboardBinding(),
     ],
   ),
   GetPage(
     name: "/dash_bord",
-    page: () => const DashbordScreen(),
-    binding: DashbordBinding(),
+    page: () => const DashboardScreen(),
+    binding: DashboardBinding(),
   ),
 ];
