@@ -4,9 +4,7 @@ import '../../../common/utils/utils.dart';
 import '../../../common/widgets/custom_base_user_info.dart';
 
 class UserBaseInfoWidget extends StatelessWidget {
-  const UserBaseInfoWidget({
-    super.key,
-  });
+  const UserBaseInfoWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +23,7 @@ class UserBaseInfoWidget extends StatelessWidget {
         ),
       ),
       child: CustomBaseUserInfo(
+        fontColor: Colors.white,
         raduis: AppUtils.avatarRadius,
       ),
     );

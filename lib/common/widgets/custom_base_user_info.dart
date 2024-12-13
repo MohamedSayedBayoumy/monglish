@@ -6,7 +6,8 @@ import '../constants/app_images.dart';
 
 class CustomBaseUserInfo extends StatelessWidget {
   final double raduis;
-  const CustomBaseUserInfo({super.key, required this.raduis});
+  final Color? fontColor;
+  const CustomBaseUserInfo({super.key, required this.raduis, this.fontColor});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +30,9 @@ class CustomBaseUserInfo extends StatelessWidget {
                 fit: BoxFit.scaleDown,
                 child: Text(
                   "Mohamed Sayed Bayoumy",
-                  style: AppStyles.styleRegular18.copyWith(color: Colors.black),
+                  style: AppStyles.styleRegular18.copyWith(
+                    color: fontColor ?? Colors.black,
+                  ),
                 ),
               ),
               const SizedBox(height: 10.0),
