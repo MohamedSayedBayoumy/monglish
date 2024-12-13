@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../common/constants/app_colors.dart';
+import '../../../../common/utils/utils.dart';
 import '../../../../common/widgets/custom_base_user_info.dart';
 import '../dashboard_container_widget.dart';
 import '../row_details_user_info_widget.dart';
@@ -12,12 +13,12 @@ class UserInfoCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return DashboardContainerWidget(
       backgroundColor: AppColors.blueAccent,
-      child: const Column(
+      child: Column(
         children: [
-          CustomBaseUserInfo(
+          const CustomBaseUserInfo(
             raduis: 30,
           ),
-          SizedBox(height: 10.0),
+          const SizedBox(height: 10.0),
           Row(
             children: [
               Expanded(
@@ -25,36 +26,36 @@ class UserInfoCardWidget extends StatelessWidget {
                   children: [
                     RowDetailsUserInfoCardWidget(
                       icon: Icons.phone,
-                      value: "+201114205280",
+                      value: AppUtils.user.mobile!,
                     ),
-                    SizedBox(height: 10.0),
+                    const SizedBox(height: 10.0),
                     RowDetailsUserInfoCardWidget(
                       icon: Icons.email,
-                      value: "mohamedSayed@gmail.com",
+                      value: AppUtils.user.email!,
                       addFittedBox: true,
                     ),
                   ],
                 ),
               ),
-              SizedBox(width: 10.0),
+              const SizedBox(width: 10.0),
               Expanded(
                   child: Column(
                 children: [
-                  RowDetailsUserInfoCardWidget(
+                  const RowDetailsUserInfoCardWidget(
                     icon: Icons.calendar_month_outlined,
                     value: "13/12/2024",
                   ),
-                  SizedBox(height: 10.0),
+                  const SizedBox(height: 10.0),
                   Row(
                     children: [
                       RowDetailsUserInfoCardWidget(
                         icon: Icons.language_outlined,
-                        value: "Egypt",
+                        value: AppUtils.user.nationality!,
                       ),
-                      SizedBox(width: 10.0),
+                      const SizedBox(width: 10.0),
                       RowDetailsUserInfoCardWidget(
                         icon: Icons.report_gmailerrorred_rounded,
-                        value: "male",
+                        value: AppUtils.user.gender!,
                       ),
                     ],
                   ),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../constants/app_colors.dart';
 import '../constants/app_fonts.dart';
 import '../constants/app_images.dart';
+import '../utils/utils.dart';
 
 class CustomBaseUserInfo extends StatelessWidget {
   final double raduis;
@@ -29,7 +30,7 @@ class CustomBaseUserInfo extends StatelessWidget {
               FittedBox(
                 fit: BoxFit.scaleDown,
                 child: Text(
-                  "Mohamed Sayed Bayoumy",
+                  AppUtils.user.userName!,
                   style: AppStyles.styleRegular18.copyWith(
                     color: fontColor ?? Colors.black,
                   ),
@@ -37,7 +38,7 @@ class CustomBaseUserInfo extends StatelessWidget {
               ),
               const SizedBox(height: 10.0),
               Text(
-                "20152",
+                AppUtils.user.userId.toString(),
                 style: AppStyles.styleRegular15
                     .copyWith(color: const Color(0xff68738d)),
               )

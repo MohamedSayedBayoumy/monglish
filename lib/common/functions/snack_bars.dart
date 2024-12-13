@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 abstract class SnackBars {
   static successAlert(BuildContext context, {String? userName}) async {
     await Flushbar(
-      duration: const Duration(seconds: 3),
+      duration: const Duration(seconds: 2),
       margin: const EdgeInsets.all(8),
       borderRadius: BorderRadius.circular(8),
       title: 'Successfully',

@@ -1,7 +1,14 @@
+import 'dart:convert';
+
+import '../../data/models/user_model.dart';
+import '../services/local_storage.dart';
 import 'enums.dart';
 
 abstract class AppUtils {
+  static UserModel user = UserModel();
+
   static double avatarRadius = 38;
+
   static checkInput(String value, FiledType filedType) {
     switch (filedType) {
       case FiledType.email:
@@ -25,6 +32,29 @@ abstract class AppUtils {
         if (value.isEmpty) {
           return "This File is Required";
         }
+    }
+  }
+
+  static Future<void> getUserData() async {
+    String? jsonString = await SecureLocalStorageService.readSecureData(
+      SecureLocalStorageService.userKey,
+    );
+
+    if (jsonString != "") {
+      Map<String, dynamic> userMap = jsonDecode(jsonString);
+
+      user = UserModel.fromMap(userMap);
+    } else {
+      user = UserModel(
+        userId: 9999,
+        country: "Egypt",
+        email: "MohamedSayed@gmail.com",
+        gender: "Male",
+        mobile: "+201114205280",
+        nationality: "Egypt",
+        userName: "Mohamed Sayed",
+        token: "",
+      );
     }
   }
 }

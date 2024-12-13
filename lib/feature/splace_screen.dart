@@ -5,7 +5,9 @@ import '../common/constants/app_colors.dart';
 import '../common/constants/app_images.dart';
 import 'package:animate_do/animate_do.dart';
 
+import '../common/utils/utils.dart';
 import '../common/widgets/custom_assets_image.dart';
+import 'bottom_navigation_bar.dart';
 import 'login/screens/login_screen.dart';
 
 class SplaceScreen extends StatelessWidget {
@@ -21,7 +23,11 @@ class SplaceScreen extends StatelessWidget {
         child: FadeIn(
           duration: const Duration(seconds: 3),
           onFinish: (v) {
-            Get.offAndToNamed(LoginScreen.routeName);
+            if (AppUtils.user.token!.isNotEmpty) {
+              Get.offAndToNamed(BottomNavigationBarScreen.routeName);
+            } else {
+              Get.offAndToNamed(LoginScreen.routeName);
+            }
           },
           child: const CustomAssetsImage(
             imagePath: AppImages.imagesLogo,

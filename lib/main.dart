@@ -3,10 +3,14 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import 'common/routes/routes.dart';
-import 'feature/bottom_navigation_bar.dart';
 import 'package:device_preview/device_preview.dart';
 
+import 'common/utils/utils.dart';
+import 'feature/splace_screen.dart';
+
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  AppUtils.getUserData();
   // runApp(const MyApp());
 
   runApp(
@@ -37,7 +41,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: false,
         fontFamily: "Inter",
       ),
-      home: const BottomNavigationBarScreen(),
+      home: const SplaceScreen(),
     );
   }
 }

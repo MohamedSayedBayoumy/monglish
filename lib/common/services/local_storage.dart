@@ -1,11 +1,11 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
-class SecureLocalStorage {
+abstract class SecureLocalStorageService {
   static const FlutterSecureStorage storage = FlutterSecureStorage();
 
-  
+  static String userKey = "user";
 
-  static Future<void> writeSecureData(String key, String value) async {
+  static Future<void> writeSecureData(String key, value) async {
     await storage.write(key: key, value: value);
   }
 

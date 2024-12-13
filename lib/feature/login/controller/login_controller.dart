@@ -1,6 +1,10 @@
+import 'dart:convert';
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../common/functions/snack_bars.dart';
+import '../../../common/services/local_storage.dart';
 import '../../../common/utils/enums.dart';
 import '../../../data/models/params_model/login_param_model.dart';
 import '../../../data/reposity_pattern/login_api.dart';
@@ -45,12 +49,19 @@ class LoginController extends GetxController {
           );
           update();
         },
-        (r) {
+        (r) async {
+          log("${r.toMap()}");
+          SnackBars.successAlert(context, userName: r.userName);
           status = Status.loaded;
           update();
-          SnackBars.successAlert(context, userName: r.userName);
+          String jsonString = jsonEncode(r.toMap());
+          await SecureLocalStorageService.writeSecureData(
+            SecureLocalStorageService.userKey,
+            jsonString,
+          );
+
           Future.delayed(
-            const Duration(seconds: 1),
+            const Duration(milliseconds: 600),
             () {
               Get.offAndToNamed(BottomNavigationBarScreen.routeName);
             },
