@@ -16,12 +16,15 @@ class BottomNavigationBarScreen extends StatefulWidget {
 }
 
 class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
-  int currentIndex = 0;
+  int currentIndex = 1;
   PageController pageController = PageController();
+
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       body: PageView(
         physics: const NeverScrollableScrollPhysics(),
         controller: pageController,
@@ -30,35 +33,41 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
           setState(() {});
         },
         children: const [
-          DrawerScreen(),
+          Center(),
           DashbordScreen(),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
-        elevation: 20.0,
-        currentIndex: currentIndex,
-        onTap: (value) {
-          // if(value)
-          pageController.animateToPage(value,
-              duration: const Duration(milliseconds: 100),
-              curve: Curves.linear);
-        },
-        selectedLabelStyle:
-            AppStyles.styleRegular15.copyWith(color: AppColors.grey),
-        unselectedFontSize: 15,
-        selectedItemColor: AppColors.orange,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.menu),
-            label: 'More',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.dashboard_outlined),
-            label: 'Dashboard',
-          ),
-        ],
-      ),
+      drawer: const DrawerScreen(),
+      bottomNavigationBar: currentIndex != 0
+          ? BottomNavigationBar(
+              backgroundColor: Colors.white,
+              elevation: 20.0,
+              currentIndex: currentIndex,
+              onTap: (value) {
+                if (value == 0) {
+                  _scaffoldKey.currentState!.openDrawer();
+                  return;
+                }
+                pageController.animateToPage(value,
+                    duration: const Duration(milliseconds: 100),
+                    curve: Curves.linear);
+              },
+              selectedLabelStyle:
+                  AppStyles.styleRegular15.copyWith(color: AppColors.grey),
+              unselectedFontSize: 15,
+              selectedItemColor: AppColors.orange,
+              items: const <BottomNavigationBarItem>[
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.menu),
+                  label: 'More',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.dashboard_outlined),
+                  label: 'Dashboard',
+                ),
+              ],
+            )
+          : null,
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../common/constants/app_colors.dart';
 import '../../../common/utils/utils.dart';
@@ -19,7 +20,9 @@ class OragneContainerWidget extends StatelessWidget {
         // (AppUtils.avatarRadius * 2) => height twice the radius
         // 2.5 is padding related of user base info container
         child: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Get.back();
+          },
           icon: const Icon(
             Icons.close_rounded,
             size: 35.0,
