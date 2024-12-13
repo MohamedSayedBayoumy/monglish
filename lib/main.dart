@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
- 
+
 import 'common/routes/routes.dart';
+import 'feature/bottom_navigation_bar.dart';
+import 'feature/dashbord/screens/dashbord_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,6 +26,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: false,
         fontFamily: "Inter",
       ),
+      home: const BottomNavigationBarScreen(),
     );
   }
 }

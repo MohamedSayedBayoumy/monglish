@@ -4,7 +4,7 @@ import '../../../common/functions/snack_bars.dart';
 import '../../../common/utils/enums.dart';
 import '../../../data/models/params_model/login_param_model.dart';
 import '../../../data/reposity_pattern/login_api.dart';
-import '../../home/screens/home_screen.dart';
+import '../../bottom_navigation_bar.dart';
 
 class LoginController extends GetxController {
   final AuthenticationUseCases? authenticationUseCases;
@@ -48,11 +48,11 @@ class LoginController extends GetxController {
         (r) {
           status = Status.loaded;
           update();
-          SnackBars.successAlert(context, userName: "Mohamaed");
+          SnackBars.successAlert(context, userName: r.userName);
           Future.delayed(
             const Duration(seconds: 1),
             () {
-              Get.offAndToNamed(HomeScreen.routeName);
+              Get.offAndToNamed(BottomNavigationBarScreen.routeName);
             },
           );
         },

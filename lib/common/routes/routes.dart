@@ -1,9 +1,10 @@
 import 'package:get/get.dart';
 
-import '../../feature/home/screens/home_screen.dart';
+import '../../feature/bottom_navigation_bar.dart';
+import '../../feature/dashbord/screens/dashbord_screen.dart';
 import '../../feature/login/screens/login_screen.dart';
 import '../../feature/splace_screen.dart';
-import '../binding/home_binding.dart';
+import '../binding/dashbord_binding.dart';
 import '../binding/login_binding.dart';
 
 List<GetPage> routes = [
@@ -18,8 +19,15 @@ List<GetPage> routes = [
     binding: LoginBinding(),
   ),
   GetPage(
-    name: "/home",
-    page: () => const HomeScreen(),
-    binding: HomeBinding(),
+    name: "/bottom_navigation",
+    page: () => const BottomNavigationBarScreen(),
+    bindings: [
+      DashbordBinding(),
+    ],
+  ),
+  GetPage(
+    name: "/dash_bord",
+    page: () => const DashbordScreen(),
+    binding: DashbordBinding(),
   ),
 ];
