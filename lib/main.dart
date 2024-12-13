@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -8,9 +10,9 @@ import 'package:device_preview/device_preview.dart';
 import 'common/utils/utils.dart';
 import 'feature/splace_screen.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  AppUtils.getUserData();
+  await AppUtils.getUserData();
   // runApp(const MyApp());
 
   runApp(
@@ -27,6 +29,7 @@ void main() {
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
+  log("${AppUtils.user.toMap()}");
 }
 
 class MyApp extends StatelessWidget {

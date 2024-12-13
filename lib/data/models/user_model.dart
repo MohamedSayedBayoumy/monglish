@@ -1,7 +1,7 @@
 class UserModel {
   final int? userId;
   final String? token;
-  final String? userName;
+  final String? name;
   final String? email;
   final String? mobile;
   final String? gender;
@@ -11,7 +11,7 @@ class UserModel {
   UserModel({
     this.userId = 99999,
     this.token = "",
-    this.userName = "",
+    this.name = "",
     this.email = "",
     this.mobile = "",
     this.gender = "",
@@ -23,7 +23,7 @@ class UserModel {
     return UserModel(
       userId: map["data"]['id'] ?? 99999,
       token: map['token'] ?? "",
-      userName: map["data"]['name'] ?? "",
+      name: map["data"]['name'] ?? "",
       email: map["data"]['email'] ?? "",
       mobile: map["data"]['mobile'] ?? "",
       nationality: map["data"]['nationality'] ?? "Egyption",
@@ -32,11 +32,24 @@ class UserModel {
     );
   }
 
+  factory UserModel.fromJsonOfLocalStorage(Map<String, dynamic> map) {
+    return UserModel(
+      userId: map['id'] ?? 99999,
+      token: map['token'] ?? "",
+      name: map['name'] ?? "",
+      email: map['email'] ?? "",
+      mobile: map['mobile'] ?? "",
+      nationality: map['nationality'] ?? "Egyption",
+      gender: map['gender'] ?? "Male",
+      country: map['country'] ?? "Egypt",
+    );
+  }
+
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'userId': userId,
       'token': token,
-      'userName': userName,
+      'name': name,
       'email': email,
       'mobile': mobile,
       'gender': gender,

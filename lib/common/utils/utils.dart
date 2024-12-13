@@ -40,10 +40,10 @@ abstract class AppUtils {
       SecureLocalStorageService.userKey,
     );
 
-    if (jsonString != "") {
+    if (jsonString != "No data found!") {
       Map<String, dynamic> userMap = jsonDecode(jsonString);
 
-      user = UserModel.fromMap(userMap);
+      user = UserModel.fromJsonOfLocalStorage(userMap);
     } else {
       user = UserModel(
         userId: 9999,
@@ -52,7 +52,7 @@ abstract class AppUtils {
         gender: "Male",
         mobile: "+201114205280",
         nationality: "Egypt",
-        userName: "Mohamed Sayed",
+        name: "Mohamed Sayed",
         token: "",
       );
     }

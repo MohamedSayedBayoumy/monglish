@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:monglish/common/utils/utils.dart';
 
 import '../../feature/bottom_navigation_bar.dart';
 import '../../feature/dashboard/screens/dashboard_screen.dart';
@@ -11,7 +12,7 @@ List<GetPage> routes = [
   GetPage(
     name: "/",
     page: () => const SplaceScreen(),
-    binding: LoginBinding(),
+    binding: AppUtils.user.token.toString().isEmpty ? null : LoginBinding(),
   ),
   GetPage(
     name: "/login",

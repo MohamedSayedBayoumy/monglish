@@ -52,7 +52,7 @@ class LoginController extends GetxController {
         },
         (r) async {
           log("${r.toMap()}");
-          SnackBars.successAlert(context, userName: r.userName);
+          SnackBars.successAlert(context, userName: r.name);
           AppUtils.user = r;
           status = Status.loaded;
           update();

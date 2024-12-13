@@ -30,7 +30,7 @@ class CustomBaseUserInfo extends StatelessWidget {
               FittedBox(
                 fit: BoxFit.scaleDown,
                 child: Text(
-                  AppUtils.user.userName!,
+                  AppUtils.user.name!,
                   style: AppStyles.styleRegular18.copyWith(
                     color: fontColor ?? Colors.black,
                   ),
