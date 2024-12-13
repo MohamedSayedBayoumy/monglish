@@ -5,4 +5,5 @@ abstract class AppColors {
   static Color deepBlue = const Color(0xff2f3349);
   static Color grey = const Color(0xff595d74);
   static Color orange = const Color(0xfffe7700);
+  static Color blueAccent = const Color(0xffcae3ff);
 }

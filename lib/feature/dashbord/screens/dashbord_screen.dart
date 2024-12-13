@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../common/widgets/custom_deep_blue_color_container.dart';
+import '../widgets/container_body_widget.dart';
+import '../widgets/dashbord_app_bar_widget.dart';
+import '../widgets/user_info_card_widget.dart';
 
 class DashbordScreen extends StatelessWidget {
   static const String routeName = "/dash_bord";
@@ -9,13 +11,22 @@ class DashbordScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CustomScrollView(
-      slivers: [
-        SliverToBoxAdapter(
-          child: CustomDeepBlueColorContainer(),
+    return const Stack(
+      children: [
+        DashBordAppBarWidget(),
+        Positioned(
+          top: 110,
+          child: ContainerBodyWidget(
+            child: CustomScrollView(
+              slivers: [
+                SliverToBoxAdapter(
+                  child: UserInfoCardWidget(),
+                )
+              ],
+            ),
+          ),
         ),
       ],
     );
   }
 }
-

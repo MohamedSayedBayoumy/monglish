@@ -33,7 +33,6 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
           setState(() {});
         },
         children: const [
-          Center(),
           DashbordScreen(),
         ],
       ),
