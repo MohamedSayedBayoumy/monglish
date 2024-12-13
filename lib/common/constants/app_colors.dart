@@ -8,4 +8,7 @@ abstract class AppColors {
   static Color blueAccent = const Color(0xffcae3ff);
   static Color opcityPurple = const Color(0xffe1d6f3);
   static Color purple = const Color(0xff9949e6);
+  static Color orangeOpicty = const Color(0xfffbdabf);
+  
+
 }

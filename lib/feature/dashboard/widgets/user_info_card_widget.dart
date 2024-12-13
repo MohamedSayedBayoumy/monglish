@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../common/constants/app_colors.dart';
 import '../../../common/widgets/custom_base_user_info.dart';
+import 'dashboard_container_widget.dart';
 import 'row_details_user_info_widget.dart';
 
 class UserInfoCardWidget extends StatelessWidget {
@@ -9,11 +10,8 @@ class UserInfoCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(10.0),
-      decoration: BoxDecoration(
-          color: AppColors.blueAccent,
-          borderRadius: BorderRadius.circular(12.0)),
+    return DashboardContainerWidget(
+      backgroundColor: AppColors.blueAccent,
       child: const Column(
         children: [
           CustomBaseUserInfo(

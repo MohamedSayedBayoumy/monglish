@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../common/constants/app_colors.dart';
 import '../../../common/constants/app_fonts.dart';
+import 'dashboard_container_widget.dart';
 import 'row_details_user_info_widget.dart';
 
 class LevelWidget extends StatelessWidget {
@@ -11,11 +12,8 @@ class LevelWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
-      child: Container(
-        padding: const EdgeInsets.all(10.0),
-        decoration: BoxDecoration(
-            color: AppColors.opcityPurple,
-            borderRadius: BorderRadius.circular(12.0)),
+      child: DashboardContainerWidget(
+        backgroundColor: AppColors.opcityPurple,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

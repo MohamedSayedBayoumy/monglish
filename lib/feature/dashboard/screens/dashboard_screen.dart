@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/calender_widget.dart';
+import '../widgets/club_packs_widget.dart';
 import '../widgets/container_body_widget.dart';
 import '../widgets/dashbord_app_bar_widget.dart';
 import '../widgets/level_widget.dart';
@@ -27,8 +27,14 @@ class DashboardScreen extends StatelessWidget {
                 SliverToBoxAdapter(
                   child: LevelWidget(),
                 ),
+                // SliverToBoxAdapter(
+                //   child: CalenderWidget(),
+                // ),
                 SliverToBoxAdapter(
-                  child: CalenderWidget(),
+                  child: PackagesClubWidget(),
+                ),
+                SliverToBoxAdapter(
+                  child: PackagesClubWidget(),
                 ),
               ],
             ),
