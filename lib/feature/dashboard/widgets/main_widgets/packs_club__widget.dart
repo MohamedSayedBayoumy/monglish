@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../../common/constants/app_colors.dart';
-import '../../../common/constants/app_fonts.dart';
-import 'dashboard_container_widget.dart';
-import 'packages_club_card_widget.dart';
+import '../../../../common/constants/app_colors.dart';
+import '../../../../common/constants/app_fonts.dart';
+import '../dashboard_container_widget.dart';
+import '../packages_club_card_widget.dart';
 
 class PackagesClubWidget extends StatelessWidget {
   const PackagesClubWidget({super.key});

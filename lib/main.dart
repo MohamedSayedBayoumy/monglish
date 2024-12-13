@@ -4,15 +4,16 @@ import 'package:get/get.dart';
 
 import 'common/routes/routes.dart';
 import 'feature/bottom_navigation_bar.dart';
+import 'package:device_preview/device_preview.dart';
 
 void main() {
-  runApp(const MyApp());
+  // runApp(const MyApp());
 
-  // runApp(
-  //   DevicePreview(
-  //     builder: (context) => const MyApp(),
-  //   ),
-  // );
+  runApp(
+    DevicePreview(
+      builder: (context) => const MyApp(),
+    ),
+  );
 
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,

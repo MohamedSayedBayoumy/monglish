@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/club_packs_widget.dart';
+import '../widgets/main_widgets/packs_club__widget.dart';
 import '../widgets/container_body_widget.dart';
 import '../widgets/dashbord_app_bar_widget.dart';
-import '../widgets/level_widget.dart';
-import '../widgets/user_info_card_widget.dart';
+import '../widgets/main_widgets/current_level_widget.dart';
+import '../widgets/main_widgets/rewards_widget.dart';
+import '../widgets/main_widgets/school_information_widget.dart';
+import '../widgets/main_widgets/user_info_card_widget.dart';
 
 class DashboardScreen extends StatelessWidget {
   static const String routeName = "/dash_bord";
@@ -16,16 +18,17 @@ class DashboardScreen extends StatelessWidget {
     return const Stack(
       children: [
         DashBordAppBarWidget(),
-        Positioned(
+        Positioned.fill(
           top: 110,
           child: ContainerBodyWidget(
             child: CustomScrollView(
+              shrinkWrap: true,
               slivers: [
                 SliverToBoxAdapter(
                   child: UserInfoCardWidget(),
                 ),
                 SliverToBoxAdapter(
-                  child: LevelWidget(),
+                  child: CurrentLevelWidget(),
                 ),
                 // SliverToBoxAdapter(
                 //   child: CalenderWidget(),
@@ -34,7 +37,10 @@ class DashboardScreen extends StatelessWidget {
                   child: PackagesClubWidget(),
                 ),
                 SliverToBoxAdapter(
-                  child: PackagesClubWidget(),
+                  child: SchoolInformationWidget(),
+                ),
+                SliverToBoxAdapter(
+                  child: RewardsWidget(),
                 ),
               ],
             ),

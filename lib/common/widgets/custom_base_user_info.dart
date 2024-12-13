@@ -17,7 +17,7 @@ class CustomBaseUserInfo extends StatelessWidget {
           backgroundColor: AppColors.orange,
           child: CircleAvatar(
             radius: raduis - 2,
-            backgroundImage: const AssetImage(AppImages.testImage),
+            backgroundImage: const AssetImage(AppImages.imagesTestImage),
           ),
         ),
         const SizedBox(width: 10.0),

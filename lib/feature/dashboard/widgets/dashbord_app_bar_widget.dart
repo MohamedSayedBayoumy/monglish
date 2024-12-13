@@ -37,7 +37,7 @@ class DashBordAppBarWidget extends StatelessWidget {
             backgroundColor: AppColors.orange,
             child: const CircleAvatar(
               radius: 23.0,
-              backgroundImage: AssetImage(AppImages.testImage),
+              backgroundImage: AssetImage(AppImages.imagesTestImage),
             ),
           ),
         ],

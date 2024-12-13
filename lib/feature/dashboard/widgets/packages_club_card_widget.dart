@@ -17,7 +17,7 @@ class PackagesClubCardWidget extends StatelessWidget {
           backgroundColor: AppColors.orange,
           child: const CircleAvatar(
             radius: 16,
-            backgroundImage: AssetImage(AppImages.testImage),
+            backgroundImage: AssetImage(AppImages.imagesTestImage),
           ),
         ),
         const SizedBox(width: 5.0),

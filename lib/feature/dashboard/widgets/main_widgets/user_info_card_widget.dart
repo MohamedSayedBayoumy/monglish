@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../../common/constants/app_colors.dart';
-import '../../../common/widgets/custom_base_user_info.dart';
-import 'dashboard_container_widget.dart';
-import 'row_details_user_info_widget.dart';
+import '../../../../common/constants/app_colors.dart';
+import '../../../../common/widgets/custom_base_user_info.dart';
+import '../dashboard_container_widget.dart';
+import '../row_details_user_info_widget.dart';
 
 class UserInfoCardWidget extends StatelessWidget {
   const UserInfoCardWidget({super.key});
