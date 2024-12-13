@@ -23,6 +23,8 @@ dependencies:
   flutter_secure_storage: 
   another_flushbar: 
   animate_do: 
+  syncfusion_flutter_calendar: 
+   path: ../calendar/
 
 dev_dependencies:
   flutter_test:

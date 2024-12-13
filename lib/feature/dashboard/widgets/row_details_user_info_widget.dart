@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class RowDetailsUserInfoCardWidget extends StatelessWidget {
   final IconData icon;
+  final Color? iconColor;
   final String value;
   final bool addFittedBox;
   const RowDetailsUserInfoCardWidget({
@@ -9,6 +10,7 @@ class RowDetailsUserInfoCardWidget extends StatelessWidget {
     required this.icon,
     required this.value,
     this.addFittedBox = false,
+    this.iconColor,
   });
 
   @override
@@ -18,12 +20,13 @@ class RowDetailsUserInfoCardWidget extends StatelessWidget {
       children: [
         Icon(
           icon,
-          color: Colors.blue,
+          color: iconColor ?? Colors.blue,
         ),
         const SizedBox(width: 3.0),
         if (addFittedBox == true) ...[
           Expanded(
             child: FittedBox(
+              alignment: AlignmentDirectional.centerStart,
               fit: BoxFit.scaleDown,
               child: Text(
                 value,
