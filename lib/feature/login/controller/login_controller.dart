@@ -3,6 +3,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:monglish/common/utils/utils.dart';
 import '../../../common/functions/snack_bars.dart';
 import '../../../common/services/local_storage.dart';
 import '../../../common/utils/enums.dart';
@@ -52,6 +53,7 @@ class LoginController extends GetxController {
         (r) async {
           log("${r.toMap()}");
           SnackBars.successAlert(context, userName: r.userName);
+          AppUtils.user = r;
           status = Status.loaded;
           update();
           String jsonString = jsonEncode(r.toMap());
