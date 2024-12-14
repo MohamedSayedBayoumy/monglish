@@ -1,14 +1,19 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 import '../../../common/constants/app_colors.dart';
 import '../../../common/constants/app_fonts.dart';
 import '../../../common/constants/app_images.dart';
+import '../../../data/models/dashboard_response_model.dart';
 
 class PackagesClubCardWidget extends StatelessWidget {
-  const PackagesClubCardWidget({super.key});
+  final PackageClub packageClub;
+  const PackagesClubCardWidget({super.key, required this.packageClub});
 
   @override
   Widget build(BuildContext context) {
+    log("${packageClub.toJson()}");
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
@@ -21,30 +26,37 @@ class PackagesClubCardWidget extends StatelessWidget {
           ),
         ),
         const SizedBox(width: 5.0),
-        const Expanded(
+        Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "Reading Club",
-                style: AppStyles.styleMedium18,
+              Expanded(
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    packageClub.name!,
+                    style: AppStyles.styleMedium18,
+                  ),
+                ),
               ),
-              SizedBox(height: 3.0),
+              const SizedBox(height: 3.0),
               Row(
                 children: [
                   Expanded(
                     child: FittedBox(
+                      fit: BoxFit.scaleDown,
                       child: Text(
-                        "Available 4000",
+                        "Available ${packageClub.count!}",
                         style: AppStyles.styleRegular15,
                       ),
                     ),
                   ),
-                  SizedBox(width: 10.0),
+                  const SizedBox(width: 10.0),
                   Expanded(
                     child: FittedBox(
+                      fit: BoxFit.scaleDown,
                       child: Text(
-                        "Available 4000",
+                        "Token ${packageClub.delClubId!}",
                         style: AppStyles.styleRegular15,
                       ),
                     ),

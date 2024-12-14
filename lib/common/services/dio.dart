@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 import '../constants/api_end_pionts.dart';
+import '../utils/utils.dart';
 
 abstract class DioServices {
   static final Dio dio = Dio(
@@ -33,16 +34,11 @@ abstract class DioServices {
 
   static Future<Response> get({
     String? endPoint,
-    FormData? body,
   }) async {
     final response = await dio.get(
       endPoint!,
-      data: body,
       options: Options(
-        ///! ADDDDDDDDDDDDDDDD TOKEEEEEEEEEEEEEEEEN $token
-        headers: {
-          "Authorization": "Bearer ",
-        },
+        headers: {'Authorization': 'Bearer ${AppUtils.user.token}'},
       ),
     );
     return response;

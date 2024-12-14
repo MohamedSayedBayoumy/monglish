@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 
 import '../../../../common/constants/app_colors.dart';
 import '../../../../common/constants/app_fonts.dart';
+import '../../../../data/models/dashboard_response_model.dart';
 import '../dashboard_container_widget.dart';
 import '../packages_club_card_widget.dart';
 
 class PackagesClubWidget extends StatelessWidget {
-  const PackagesClubWidget({super.key});
+  final List<PackageClub>? packageClubs;
+  const PackagesClubWidget({super.key, this.packageClubs});
 
   @override
   Widget build(BuildContext context) {
@@ -29,8 +31,10 @@ class PackagesClubWidget extends StatelessWidget {
               crossAxisSpacing: 10.0,
               mainAxisSpacing: 5.0,
             ),
-            itemCount: 10,
-            itemBuilder: (context, index) => const PackagesClubCardWidget(),
+            itemCount: packageClubs!.length,
+            itemBuilder: (context, index) => PackagesClubCardWidget(
+              packageClub: packageClubs![index],
+            ),
           ),
         ],
       ),

@@ -38,7 +38,7 @@ class CustomBaseUserInfo extends StatelessWidget {
               ),
               const SizedBox(height: 10.0),
               Text(
-                AppUtils.user.userId.toString(),
+                AppUtils.user.id.toString(),
                 style: AppStyles.styleRegular15
                     .copyWith(color: const Color(0xff68738d)),
               )

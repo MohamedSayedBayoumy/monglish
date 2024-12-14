@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import '../../data/models/dashboard_response_model.dart';
 import '../../data/models/user_model.dart';
 import '../services/local_storage.dart';
 import 'enums.dart';
@@ -46,7 +47,7 @@ abstract class AppUtils {
       user = UserModel.fromJsonOfLocalStorage(userMap);
     } else {
       user = UserModel(
-        userId: 9999,
+        id: 9999,
         country: "Egypt",
         email: "MohamedSayed@gmail.com",
         gender: "Male",
@@ -57,4 +58,73 @@ abstract class AppUtils {
       );
     }
   }
+
+  static DashBoardModel dashBoardModel = DashBoardModel(
+    message: "Operation successful",
+    status: "success",
+    data: Data(
+      level: Level(
+        id: 1,
+        code: "L001",
+        fieldId: 10,
+        order: 1,
+        name: "Beginner Level",
+        notes: "This is the starting level",
+        removed: 0,
+        searchText: "Beginner Level Search Text",
+        createdAt: DateTime.now(),
+        updatedAt: DateTime.now(),
+        pivot: LevelPivot(
+          userId: 123,
+          levelId: 1,
+        ),
+        field: School(
+          id: 101,
+          code: "SCH001",
+          parentId: null,
+          nextId: null,
+          order: 1,
+          name: "Sample School",
+          nameLocal: "مدرسة نموذجية",
+          rootId: null,
+          type: 1,
+          removed: 0,
+          searchText: "School Search Text",
+          createdAt: DateTime.now(),
+          updatedAt: DateTime.now(),
+          root: null,
+        ),
+      ),
+      school: School(
+        id: 101,
+        code: "SCH001",
+        parentId: null,
+        nextId: null,
+        order: 1,
+        name: "Sample School",
+        nameLocal: "مدرسة نموذجية",
+        rootId: null,
+        type: 1,
+        removed: 0,
+        searchText: "School Search Text",
+        createdAt: DateTime.now(),
+        updatedAt: DateTime.now(),
+        root: null,
+      ),
+      packageClubs: [
+        PackageClub(
+          clubTypeId: 1,
+          delClubId: 10,
+          count: 5,
+          name: "Chess Club",
+        ),
+        PackageClub(
+          clubTypeId: 2,
+          delClubId: 20,
+          count: 3,
+          name: "Robotics Club",
+        ),
+      ],
+    ),
+  );
 }
