@@ -24,6 +24,7 @@ class DashboardController extends GetxController {
     super.onInit();
     WidgetsBinding.instance.addPostFrameCallback(
       (_) async {
+        calendarController.displayDate = DateTime.now();
         getData(BuildContext);
       },
     );
@@ -59,6 +60,7 @@ class DashboardController extends GetxController {
       calendarController.displayDate =
           calendarController.displayDate?.add(const Duration(days: 1));
     }
+
     update();
   }
 

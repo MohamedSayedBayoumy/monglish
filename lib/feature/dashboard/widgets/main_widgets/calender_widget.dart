@@ -1,5 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 import 'package:table_calendar/table_calendar.dart';
 
@@ -29,9 +30,13 @@ class CalenderWidget extends StatelessWidget {
         children: [
           TableCalendar(
             firstDay: DateTime.now(),
-            lastDay: DateTime.now(),
+            lastDay: DateTime(3000, 1, 1),
             focusedDay: DateTime.now(),
             calendarFormat: CalendarFormat.month,
+            title: dashboardController.calendarFormat == CalendarView.month
+                ? null
+                : DateFormat('MMMM yyyy').format(
+                    dashboardController.calendarController.displayDate!),
             onTapMonth: () {
               dashboardController.calendarController.view = CalendarView.month;
               dashboardController.calendarFormat = CalendarView.month;
