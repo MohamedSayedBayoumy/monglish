@@ -33,22 +33,26 @@ class CalenderWidget extends StatelessWidget {
             lastDay: DateTime(3000, 1, 1),
             focusedDay: DateTime.now(),
             calendarFormat: CalendarFormat.month,
+            currentActiveTab: dashboardController.currentActiveTab,
             title: dashboardController.calendarFormat == CalendarView.month
                 ? null
                 : DateFormat('MMMM yyyy').format(
                     dashboardController.calendarController.displayDate!),
             onTapMonth: () {
+              dashboardController.currentActiveTab = CustomCalendarFormat.month;
               dashboardController.calendarController.view = CalendarView.month;
               dashboardController.calendarFormat = CalendarView.month;
               dashboardController.update();
             },
             onTapWeek: () {
               dashboardController.calendarController.view = CalendarView.week;
+              dashboardController.currentActiveTab = CustomCalendarFormat.week;
               dashboardController.calendarFormat = CalendarView.week;
               dashboardController.update();
             },
             onTapDay: () {
               dashboardController.calendarController.view = CalendarView.day;
+              dashboardController.currentActiveTab = CustomCalendarFormat.day;
               dashboardController.calendarFormat = CalendarView.day;
               dashboardController.update();
             },

@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
+import 'package:table_calendar/table_calendar.dart';
 
 import '../../../common/utils/enums.dart';
 import '../../../common/utils/utils.dart';
@@ -18,6 +19,8 @@ class DashboardController extends GetxController {
   CalendarView? calendarFormat = CalendarView.month;
 
   CalendarController calendarController = CalendarController();
+
+  CustomCalendarFormat currentActiveTab = CustomCalendarFormat.month;
 
   @override
   void onInit() {
