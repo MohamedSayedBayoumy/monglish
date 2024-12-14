@@ -33,28 +33,43 @@ class CalenderWidget extends StatelessWidget {
             focusedDay: DateTime.now(),
             calendarFormat: CalendarFormat.month,
             onTapMonth: () {
+              dashboardController.calendarController.view = CalendarView.month;
               dashboardController.calendarFormat = CalendarView.month;
               dashboardController.update();
             },
             onTapWeek: () {
+              dashboardController.calendarController.view = CalendarView.week;
               dashboardController.calendarFormat = CalendarView.week;
               dashboardController.update();
             },
             onTapDay: () {
+              dashboardController.calendarController.view = CalendarView.day;
               dashboardController.calendarFormat = CalendarView.day;
               dashboardController.update();
             },
+            onTapArrowStartButton:
+                dashboardController.calendarFormat == CalendarView.month
+                    ? null
+                    : () {
+                        dashboardController.perviousDate();
+                      },
+            onTapArrowEndButton:
+                dashboardController.calendarFormat == CalendarView.month
+                    ? null
+                    : () {
+                        dashboardController.nextDate();
+                      },
             calenderBody:
                 dashboardController.calendarFormat == CalendarView.month
                     ? null
                     : FadeIn(
                         duration: const Duration(seconds: 1),
                         child: AnimatedCrossFade(
-                          firstChild: const CalenderBodyViewWidget(
-                            calendarFormat: CalendarView.week,
+                          firstChild: CalenderBodyViewWidget(
+                            controller: dashboardController,
                           ),
-                          secondChild: const CalenderBodyViewWidget(
-                            calendarFormat: CalendarView.day,
+                          secondChild: CalenderBodyViewWidget(
+                            controller: dashboardController,
                           ),
                           crossFadeState: dashboardController.calendarFormat ==
                                   CalendarView.week

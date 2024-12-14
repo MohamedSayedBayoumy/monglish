@@ -2,15 +2,18 @@ import 'package:flutter/widgets.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 
 import '../../../common/services/calender_config.dart';
+import '../controller/dashboard_controller.dart';
 
 class CalenderBodyViewWidget extends StatelessWidget {
-  final CalendarView? calendarFormat;
-  const CalenderBodyViewWidget({super.key, this.calendarFormat});
+  final DashboardController controller;
+
+  const CalenderBodyViewWidget({super.key, required this.controller});
 
   @override
   Widget build(BuildContext context) {
     return SfCalendar(
-      view: calendarFormat!,
+      controller: controller.calendarController,
+      view: controller.calendarController.view!,
       allowViewNavigation: true,
       headerDateFormat: "",
       headerHeight: 0.0,

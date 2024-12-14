@@ -2,7 +2,6 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 
-import '../../../common/functions/snack_bars.dart';
 import '../../../common/utils/enums.dart';
 import '../../../common/utils/utils.dart';
 import '../../../data/models/dashboard_response_model.dart';
@@ -17,6 +16,8 @@ class DashboardController extends GetxController {
 
   DashBoardModel? dashBoardModel;
   CalendarView? calendarFormat = CalendarView.month;
+
+  CalendarController calendarController = CalendarController();
 
   @override
   void onInit() {
@@ -41,12 +42,6 @@ class DashboardController extends GetxController {
         dashBoardModel = AppUtils.dashBoardModel;
 
         update();
-        SnackBars.errorAlert(
-          context,
-          error: l.listOfFailures == ""
-              ? "${l.failureMessag} , Now you see a dummy data"
-              : "${l.listOfFailures} , Now you see a dummy data",
-        );
       },
       (r) {
         dashBoardModel = r;
@@ -54,5 +49,27 @@ class DashboardController extends GetxController {
         update();
       },
     );
+  }
+
+  void nextDate() {
+    if (calendarFormat == CalendarView.week) {
+      calendarController.displayDate =
+          calendarController.displayDate?.add(const Duration(days: 7));
+    } else {
+      calendarController.displayDate =
+          calendarController.displayDate?.add(const Duration(days: 1));
+    }
+    update();
+  }
+
+  void perviousDate() {
+    if (calendarFormat == CalendarView.week) {
+      calendarController.displayDate =
+          calendarController.displayDate?.subtract(const Duration(days: 7));
+    } else {
+      calendarController.displayDate =
+          calendarController.displayDate?.subtract(const Duration(days: 1));
+    }
+    update();
   }
 }
