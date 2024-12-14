@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:syncfusion_flutter_calendar/calendar.dart';
 
 import '../../../common/functions/snack_bars.dart';
 import '../../../common/utils/enums.dart';
@@ -15,6 +16,7 @@ class DashboardController extends GetxController {
   Status status = Status.loading;
 
   DashBoardModel? dashBoardModel;
+  CalendarView? calendarFormat = CalendarView.month;
 
   @override
   void onInit() {

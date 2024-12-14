@@ -45,8 +45,10 @@ class DashboardScreen extends StatelessWidget {
                                 controller.dashBoardModel!.data!.level!,
                           ),
                         ),
-                        const SliverToBoxAdapter(
-                          child: CalenderWidget(),
+                        SliverToBoxAdapter(
+                          child: CalenderWidget(
+                            dashboardController: controller,
+                          ),
                         ),
                         SliverToBoxAdapter(
                           child: PackagesClubWidget(

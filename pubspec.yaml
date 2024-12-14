@@ -25,6 +25,11 @@ dependencies:
   animate_do: 
   flutter_rating_stars: 
   syncfusion_flutter_calendar: 
+  # table_calendar:
+  #   git:
+  #     url: https://github.com/MohamedSayedBayoumy/calender
+  #     ref: main
+  table_calendar: 
    path: ../calendar/
 
 dev_dependencies:
