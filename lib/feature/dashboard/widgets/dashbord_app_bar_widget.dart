@@ -20,10 +20,26 @@ class DashBordAppBarWidget extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const Icon(
-            Icons.notifications_none_rounded,
-            color: Colors.white,
-            size: 30.0,
+          Stack(
+            children: [
+              const Icon(
+                Icons.notifications_none_sharp,
+                color: Colors.white,
+                size: 40.0,
+              ),
+              Positioned(
+                top: 7.0,
+                right: 10.0,
+                child: CircleAvatar(
+                  radius: 4,
+                  backgroundColor: Colors.white,
+                  child: CircleAvatar(
+                    radius: 3,
+                    backgroundColor: Colors.red.shade700,
+                  ),
+                ),
+              )
+            ],
           ),
           const SizedBox(width: 8.0),
           const Icon(
