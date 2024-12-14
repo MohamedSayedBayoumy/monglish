@@ -2,6 +2,10 @@
 class AppImages {
   AppImages._();
   
+  /// Assets for imagesDrawerImage
+  /// assets/images/drawer_image.png
+  static const String imagesDrawerImage = "assets/images/drawer_image.png";
+
   /// Assets for imagesHandshake
   /// assets/images/handshake.png
   static const String imagesHandshake = "assets/images/handshake.png";
