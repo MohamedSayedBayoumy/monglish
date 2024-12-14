@@ -4,6 +4,7 @@ import 'package:get/get_state_manager/get_state_manager.dart';
 import '../../../common/utils/enums.dart';
 import '../controller/dashboard_controller.dart';
 import '../widgets/load_widget.dart';
+import '../widgets/main_widgets/calender_widget.dart';
 import '../widgets/main_widgets/feed_back_widget.dart';
 import '../widgets/main_widgets/packs_club__widget.dart';
 import '../widgets/container_body_widget.dart';
@@ -44,9 +45,9 @@ class DashboardScreen extends StatelessWidget {
                                 controller.dashBoardModel!.data!.level!,
                           ),
                         ),
-                        // SliverToBoxAdapter(
-                        //   child: CalenderWidget(),
-                        // ),
+                        const SliverToBoxAdapter(
+                          child: CalenderWidget(),
+                        ),
                         SliverToBoxAdapter(
                           child: PackagesClubWidget(
                             packageClubs:

@@ -3,25 +3,24 @@ import 'package:syncfusion_flutter_calendar/calendar.dart';
 
 import '../../../../common/constants/app_colors.dart';
 import '../../../../common/services/calender_config.dart';
+import '../../../../common/utils/utils.dart';
+import '../dashboard_container_widget.dart';
 
 class CalenderWidget extends StatelessWidget {
   const CalenderWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(10.0),
-      decoration: BoxDecoration(
-        boxShadow: [
-          BoxShadow(
-            color: AppColors.grey.withOpacity(.4),
-            blurRadius: .8,
-            spreadRadius: .1,
-          )
-        ],
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(12.0),
-      ),
+    return DashboardContainerWidget(
+      delayFadeWidget: AppUtils.handleDelayedFadeWidget(3),
+      backgroundColor: Colors.white,
+      boxShadow: [
+        BoxShadow(
+          color: AppColors.grey.withOpacity(.4),
+          blurRadius: .8,
+          spreadRadius: .1,
+        )
+      ],
       child: SfCalendar(
         view: CalendarView.month,
         allowViewNavigation: true,

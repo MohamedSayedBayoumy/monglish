@@ -14,7 +14,7 @@ class SchoolInformationWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DashboardContainerWidget(
-      delayFadeWidget: AppUtils.handleDelayedFadeWidget(4),
+      delayFadeWidget: AppUtils.handleDelayedFadeWidget(5),
       backgroundColor: AppColors.greenWithOpicty,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

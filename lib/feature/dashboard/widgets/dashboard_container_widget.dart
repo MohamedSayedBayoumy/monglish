@@ -7,6 +7,7 @@ class DashboardContainerWidget extends StatelessWidget {
   final bool addTopPadding;
   final EdgeInsetsDirectional? padding;
   final int delayFadeWidget;
+  final List<BoxShadow>? boxShadow;
   const DashboardContainerWidget({
     super.key,
     required this.backgroundColor,
@@ -14,6 +15,7 @@ class DashboardContainerWidget extends StatelessWidget {
     this.addTopPadding = true,
     this.padding,
     this.delayFadeWidget = 500,
+    this.boxShadow,
   });
 
   @override
@@ -26,8 +28,10 @@ class DashboardContainerWidget extends StatelessWidget {
         child: Container(
           padding: padding ?? const EdgeInsetsDirectional.all(10.0),
           decoration: BoxDecoration(
-              color: backgroundColor,
-              borderRadius: BorderRadius.circular(12.0)),
+            boxShadow: boxShadow ?? [],
+            color: backgroundColor,
+            borderRadius: BorderRadius.circular(12.0),
+          ),
           child: child,
         ),
       ),

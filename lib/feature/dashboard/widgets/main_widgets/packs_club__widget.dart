@@ -14,7 +14,7 @@ class PackagesClubWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DashboardContainerWidget(
-      delayFadeWidget: AppUtils.handleDelayedFadeWidget(3),
+      delayFadeWidget: AppUtils.handleDelayedFadeWidget(4),
       backgroundColor: AppColors.orangeOpicty,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

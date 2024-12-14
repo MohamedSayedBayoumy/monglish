@@ -12,7 +12,7 @@ class RewardsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DashboardContainerWidget(
-      delayFadeWidget: AppUtils.handleDelayedFadeWidget(5),
+      delayFadeWidget: AppUtils.handleDelayedFadeWidget(6),
       backgroundColor: AppColors.yellow,
       child: Column(
         children: [

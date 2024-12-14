@@ -15,7 +15,6 @@ class CurrentLevelWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return DashboardContainerWidget(
       delayFadeWidget: AppUtils.handleDelayedFadeWidget(2),
-
       backgroundColor: AppColors.opcityPurple,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

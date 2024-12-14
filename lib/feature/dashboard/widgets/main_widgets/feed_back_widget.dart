@@ -12,7 +12,7 @@ class FeedBackWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DashboardContainerWidget(
-      delayFadeWidget: AppUtils.handleDelayedFadeWidget(6),
+      delayFadeWidget: AppUtils.handleDelayedFadeWidget(7),
       backgroundColor: AppColors.blueAccent,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
