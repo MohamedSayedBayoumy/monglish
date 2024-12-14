@@ -127,4 +127,8 @@ abstract class AppUtils {
       ],
     ),
   );
+
+  static int handleDelayedFadeWidget(int delay) {
+    return 500 * delay;
+  }
 }

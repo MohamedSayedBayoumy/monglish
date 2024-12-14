@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 
 class DashboardContainerWidget extends StatelessWidget {
@@ -5,23 +6,30 @@ class DashboardContainerWidget extends StatelessWidget {
   final Widget child;
   final bool addTopPadding;
   final EdgeInsetsDirectional? padding;
+  final int delayFadeWidget;
   const DashboardContainerWidget({
     super.key,
     required this.backgroundColor,
     required this.child,
     this.addTopPadding = true,
     this.padding,
+    this.delayFadeWidget = 500,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(top: addTopPadding == true ? 10.0 : 0.0),
-      child: Container(
-        padding: padding ?? const EdgeInsetsDirectional.all(10.0),
-        decoration: BoxDecoration(
-            color: backgroundColor, borderRadius: BorderRadius.circular(12.0)),
-        child: child,
+    return FadeIn(
+      duration: const Duration(seconds: 1),
+      delay: Duration(milliseconds: delayFadeWidget),
+      child: Padding(
+        padding: EdgeInsets.only(top: addTopPadding == true ? 10.0 : 0.0),
+        child: Container(
+          padding: padding ?? const EdgeInsetsDirectional.all(10.0),
+          decoration: BoxDecoration(
+              color: backgroundColor,
+              borderRadius: BorderRadius.circular(12.0)),
+          child: child,
+        ),
       ),
     );
   }

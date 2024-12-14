@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../common/constants/app_colors.dart';
 import '../../../../common/constants/app_fonts.dart';
+import '../../../../common/utils/utils.dart';
 import '../dashboard_container_widget.dart';
 import '../feed_back_header_widget.dart';
 
@@ -11,6 +12,7 @@ class FeedBackWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DashboardContainerWidget(
+      delayFadeWidget: AppUtils.handleDelayedFadeWidget(6),
       backgroundColor: AppColors.blueAccent,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

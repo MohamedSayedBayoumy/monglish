@@ -12,6 +12,7 @@ class UserInfoCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DashboardContainerWidget(
+      delayFadeWidget: AppUtils.handleDelayedFadeWidget(1),
       backgroundColor: AppColors.blueAccent,
       child: Column(
         children: [

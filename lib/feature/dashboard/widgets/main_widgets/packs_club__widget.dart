@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../common/constants/app_colors.dart';
 import '../../../../common/constants/app_fonts.dart';
+import '../../../../common/utils/utils.dart';
 import '../../../../data/models/dashboard_response_model.dart';
 import '../dashboard_container_widget.dart';
 import '../packages_club_card_widget.dart';
@@ -13,6 +14,7 @@ class PackagesClubWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DashboardContainerWidget(
+      delayFadeWidget: AppUtils.handleDelayedFadeWidget(3),
       backgroundColor: AppColors.orangeOpicty,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

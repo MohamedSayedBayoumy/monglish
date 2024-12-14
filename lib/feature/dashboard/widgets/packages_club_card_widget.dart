@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 
 import '../../../common/constants/app_colors.dart';
@@ -13,7 +11,6 @@ class PackagesClubCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    log("${packageClub.toJson()}");
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [

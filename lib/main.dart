@@ -29,7 +29,6 @@ Future<void> main() async {
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
-  log("${AppUtils.user.toMap()}");
 }
 
 class MyApp extends StatelessWidget {

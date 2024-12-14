@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../common/constants/app_colors.dart';
 import '../../../../common/constants/app_fonts.dart';
+import '../../../../common/utils/utils.dart';
 import '../../../../data/models/dashboard_response_model.dart';
 import '../dashboard_container_widget.dart';
 import '../row_details_user_info_widget.dart';
@@ -13,6 +14,8 @@ class CurrentLevelWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DashboardContainerWidget(
+      delayFadeWidget: AppUtils.handleDelayedFadeWidget(2),
+
       backgroundColor: AppColors.opcityPurple,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

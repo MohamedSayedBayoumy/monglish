@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../common/constants/app_colors.dart';
 import '../../../../common/constants/app_fonts.dart';
+import '../../../../common/utils/utils.dart';
 import '../dashboard_container_widget.dart';
 import '../reward_card_content_widget.dart';
 
@@ -11,6 +12,7 @@ class RewardsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DashboardContainerWidget(
+      delayFadeWidget: AppUtils.handleDelayedFadeWidget(5),
       backgroundColor: AppColors.yellow,
       child: Column(
         children: [
@@ -46,6 +48,7 @@ class RewardsWidget extends StatelessWidget {
             ),
             itemCount: 10,
             itemBuilder: (context, index) => DashboardContainerWidget(
+              delayFadeWidget: AppUtils.handleDelayedFadeWidget(1),
               addTopPadding: false,
               backgroundColor: Colors.white,
               child: Column(
@@ -84,4 +87,3 @@ class RewardsWidget extends StatelessWidget {
     );
   }
 }
-
