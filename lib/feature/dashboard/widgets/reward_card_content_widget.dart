@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../common/constants/app_colors.dart';
 import '../../../common/constants/app_fonts.dart';
 import '../../../common/constants/app_images.dart';
+import '../../../common/widgets/custom_assets_image.dart';
 
 class RewardCardContentWidget extends StatelessWidget {
   const RewardCardContentWidget({super.key});
@@ -19,7 +20,9 @@ class RewardCardContentWidget extends StatelessWidget {
           decoration: BoxDecoration(
               color: AppColors.deepYellow,
               borderRadius: BorderRadius.circular(3.0)),
-          child: Image.asset(AppImages.imagesTestImage),
+          child: const CustomAssetsImage(
+            imagePath: AppImages.imagesHandshake,
+          ),
         ),
         const SizedBox(width: 5.0),
         Expanded(
@@ -30,7 +33,7 @@ class RewardCardContentWidget extends StatelessWidget {
               FittedBox(
                 fit: BoxFit.scaleDown,
                 child: Text(
-                  "Mohamed Sayed ",
+                  "Mohamed Sayed",
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   style:
