@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dio/dio.dart';
 
 abstract class FailureHandler {
@@ -40,8 +42,9 @@ class DioFailure extends FailureHandler {
           modelExpation: exception!,
         );
       case DioExceptionType.badResponse:
+        log(">>>>>>>>>>>>>>>>>>> ${exception!.response!.data["message"]}");
         final checkIsMoreOneErorr =
-            exception!.response!.data["message"].toString().contains("more");
+            exception.response!.data["message"].toString().contains("more");
         String errorMessage = " ";
         if (checkIsMoreOneErorr == true) {
           List<String> errorMessages =
@@ -51,6 +54,13 @@ class DioFailure extends FailureHandler {
                   .cast<String>()
                   .toList();
           errorMessage = errorMessages.join("\n");
+        } else {
+          if (exception.response!.data["message"].toString() ==
+              "Invalid login credentials.") {
+            errorMessage = "Invalid Email or password";
+          } else {
+            errorMessage = exception.response!.data["message"].toString();
+          }
         }
         return DioFailure(
           failureMessag: exception.response!.data["message"].toString(),
