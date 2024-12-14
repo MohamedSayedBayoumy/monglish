@@ -22,8 +22,8 @@ class CalenderWidget extends StatelessWidget {
       boxShadow: [
         BoxShadow(
           color: AppColors.grey.withOpacity(.4),
-          blurRadius: .8,
-          spreadRadius: .1,
+          blurRadius: 2,
+          spreadRadius: 1,
         )
       ],
       child: Column(

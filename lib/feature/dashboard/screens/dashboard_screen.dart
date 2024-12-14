@@ -34,6 +34,7 @@ class DashboardScreen extends StatelessWidget {
                     return const LoadingWidget();
                   case Status.loaded:
                     return CustomScrollView(
+                      physics: const BouncingScrollPhysics(),
                       shrinkWrap: true,
                       slivers: [
                         const SliverToBoxAdapter(
