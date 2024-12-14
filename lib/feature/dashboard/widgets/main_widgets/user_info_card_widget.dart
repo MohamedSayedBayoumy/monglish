@@ -54,7 +54,7 @@ class UserInfoCardWidget extends StatelessWidget {
                       ),
                       const SizedBox(width: 10.0),
                       RowDetailsUserInfoCardWidget(
-                        icon: Icons.report_gmailerrorred_rounded,
+                        icon: Icons.transgender,
                         value: AppUtils.user.gender!,
                       ),
                     ],
